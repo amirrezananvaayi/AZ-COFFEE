@@ -110,10 +110,10 @@ const state = {
   settings: {}
 };
 
-/** پاک‌سازی نام کاربری شبکه‌های اجتماعی (حذف @ و آدرس کامل) */
+/** پاک‌سازی نام کاربری شبکه‌های اجتماعی (حذف @ و آدرس کامل، با یا بدون https) */
 function cleanHandle(value, allowDot) {
   const v = String(value || '').trim()
-    .replace(/^https?:\/\/(www\.)?(instagram\.com|t\.me|telegram\.me)\//i, '')
+    .replace(/^(https?:\/\/)?(www\.)?(instagram\.com|t\.me|telegram\.me|rubika\.ir)\//i, '')
     .replace(/^@/, '')
     .replace(/[/?#].*$/, '');
   const re = allowDot ? /^[A-Za-z0-9._]{1,40}$/ : /^[A-Za-z0-9_]{3,40}$/;
@@ -122,7 +122,7 @@ function cleanHandle(value, allowDot) {
 
 /** شماره‌ی واتس‌اپ را به قالب بین‌المللی (98912...) تبدیل می‌کند */
 function cleanWhatsApp(value) {
-  let d = onlyDigits(value);
+  let d = onlyDigits(String(value || '').replace(/^.*wa\.me\//i, ''));
   if (d.startsWith('0098')) d = d.slice(2);
   else if (d.startsWith('09')) d = '98' + d.slice(1);
   else if (d.startsWith('9') && d.length === 10) d = '98' + d;
@@ -182,11 +182,13 @@ function contactLinks() {
   const wa = cleanWhatsApp(s.whatsapp);
   const tg = cleanHandle(s.telegram, false);
   const ig = cleanHandle(s.instagram, true);
+  const rb = cleanHandle(s.rubika, false);
   const email = String(s.email || '').trim();
 
   if (phone && telHref(phone)) links.push({ label: 'تلفن', text: phone, href: telHref(phone), ltr: true });
   if (wa) links.push({ label: 'واتس‌اپ', text: '+' + wa, href: 'https://wa.me/' + wa, ltr: true, external: true });
   if (tg) links.push({ label: 'تلگرام', text: '@' + tg, href: 'https://t.me/' + tg, ltr: true, external: true });
+  if (rb) links.push({ label: 'روبیکا', text: '@' + rb, href: 'https://rubika.ir/' + rb, ltr: true, external: true });
   if (ig) links.push({ label: 'اینستاگرام', text: '@' + ig, href: 'https://instagram.com/' + ig, ltr: true, external: true });
   if (isEmail(email)) links.push({ label: 'ایمیل', text: email, href: 'mailto:' + email, ltr: true });
   return links;
