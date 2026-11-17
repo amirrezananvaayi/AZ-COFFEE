@@ -1,0 +1,69 @@
+# ==========================================================
+# تنظیمات پنل مدیریت AZ COFFEE (Decap CMS)
+# فقط سه مقدار «YOUR-...» را عوض کنید (راهنما: README، بخش ۴)
+# ==========================================================
+
+backend:
+  name: github
+  repo: YOUR-USERNAME/YOUR-REPO          # مثلاً amir/az-coffee
+  branch: main
+  base_url: https://YOUR-OAUTH-WORKER.workers.dev   # آدرس Worker ورود (پوشه‌ی azcoffee-oauth-worker)
+
+locale: fa
+search: false
+publish_mode: simple
+
+# محل ذخیره‌ی عکس‌های آپلودی و مسیری که در products.json نوشته می‌شود
+media_folder: "images/uploads"
+public_folder: "images/uploads"
+
+collections:
+  - name: "shop"
+    label: "فروشگاه"
+    files:
+      # ---------- محصولات ----------
+      - name: "products"
+        label: "لیست محصولات"
+        file: "products.json"
+        format: json
+        fields:
+          - label: "محصولات"
+            name: "products"
+            widget: list
+            label_singular: "محصول"
+            summary: "{{fields.name}} — {{fields.price}}"
+            fields:
+              - label: "شناسه (یکتا، انگلیسی)"
+                name: "id"
+                widget: string
+                hint: "مثلاً az-007 — برای هر محصول باید متفاوت باشد و بعداً تغییر نکند"
+                pattern: ['^[A-Za-z0-9-]+$', "فقط حروف انگلیسی، عدد و خط تیره"]
+              - { label: "نام محصول", name: "name", widget: string }
+              - label: "دسته‌بندی"
+                name: "category"
+                widget: select
+                options: ["دانه کامل", "آسیاب‌شده", "ترکیبی"]
+              - { label: "توضیح کوتاه", name: "description", widget: string }
+              - { label: "قیمت (تومان)", name: "price", widget: number, value_type: int, min: 1 }
+              - { label: "عکس", name: "image", widget: image, required: false, hint: "آپلود عکس (حداکثر چند صد کیلوبایت، افقی)" }
+              - { label: "موجود است", name: "available", widget: boolean, default: true }
+
+      # ---------- تنظیمات سایت ----------
+      - name: "settings"
+        label: "تنظیمات سایت و تماس"
+        file: "settings.json"
+        format: json
+        fields:
+          - { label: "متن کوچک بالای تیتر", name: "hero_eyebrow", widget: string, required: false }
+          - { label: "تیتر صفحه‌ی اصلی", name: "hero_title", widget: string, required: false }
+          - { label: "متن زیر تیتر", name: "hero_text", widget: text, required: false }
+          - { label: "عنوان «درباره ما»", name: "about_title", widget: string, required: false }
+          - { label: "متن «درباره ما» (هر خط یک پاراگراف)", name: "about_text", widget: text, required: false }
+          - { label: "تلفن", name: "phone", widget: string, required: false, hint: "مثلاً 09123456789" }
+          - { label: "شماره‌ی واتس‌اپ", name: "whatsapp", widget: string, required: false, hint: "مثلاً 09123456789" }
+          - { label: "آیدی تلگرام", name: "telegram", widget: string, required: false, hint: "بدون @ ، مثلاً azcoffee_shop" }
+          - { label: "آیدی اینستاگرام", name: "instagram", widget: string, required: false, hint: "بدون @" }
+          - { label: "ایمیل", name: "email", widget: string, required: false }
+          - { label: "آدرس", name: "address", widget: text, required: false }
+          - { label: "ساعت کاری", name: "working_hours", widget: string, required: false }
+          - { label: "توضیح ارسال (زیر فرم پرداخت نمایش داده می‌شود)", name: "shipping_note", widget: string, required: false, hint: "مثلاً: هزینه‌ی ارسال هنگام تحویل محاسبه می‌شود" }
