@@ -1,0 +1,58 @@
+{
+  "products": [
+    {
+      "id": "az-001",
+      "name": "اسپرسو بلند عربیکا برزیل",
+      "category": "دانه کامل",
+      "description": "۱۰۰٪ عربیکا با رست متوسط، طعم شکلات تلخ و بادام برشته",
+      "price": 520000,
+      "image": "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=640&q=70&auto=format&fit=crop",
+      "available": true
+    },
+    {
+      "id": "az-002",
+      "name": "کلمبیا سوپریمو",
+      "category": "دانه کامل",
+      "description": "اسیدیته ملایم، بدنه‌ی کامل و نت‌های کارامل و میوه‌ی قرمز",
+      "price": 610000,
+      "image": "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=640&q=70&auto=format&fit=crop",
+      "available": true
+    },
+    {
+      "id": "az-003",
+      "name": "اتیوپی یرگاچف",
+      "category": "دانه کامل",
+      "description": "رست روشن با رایحه‌ی گل‌های وحشی، لیمو و عسل",
+      "price": 690000,
+      "image": "https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?w=640&q=70&auto=format&fit=crop",
+      "available": true
+    },
+    {
+      "id": "az-004",
+      "name": "آسیاب‌شده‌ی مخصوص فرنچ‌پرس",
+      "category": "آسیاب‌شده",
+      "description": "آسیاب درشت، طعمی غنی و کم‌اسیدیته برای دم‌آوری آرام",
+      "price": 480000,
+      "image": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=640&q=70&auto=format&fit=crop",
+      "available": true
+    },
+    {
+      "id": "az-005",
+      "name": "آسیاب‌شده‌ی مخصوص موکاپات",
+      "category": "آسیاب‌شده",
+      "description": "آسیاب متوسط، تلخی متعادل و کرمای پایدار برای موکاپات",
+      "price": 470000,
+      "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=640&q=70&auto=format&fit=crop",
+      "available": false
+    },
+    {
+      "id": "az-006",
+      "name": "بلند خانگی AZ",
+      "category": "ترکیبی",
+      "description": "۷۰٪ عربیکا و ۳۰٪ روبوستا؛ پرکرما و پرانرژی برای اسپرسو و شیرقهوه",
+      "price": 430000,
+      "image": "https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=640&q=70&auto=format&fit=crop",
+      "available": true
+    }
+  ]
+}

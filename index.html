@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AZ COFFEE | فروشگاه تخصصی قهوه</title>
+  <meta name="description" content="AZ COFFEE؛ فروشگاه تخصصی قهوه. دانه‌ی کامل، آسیاب‌شده و ترکیبی با رست تازه.">
+  <meta name="theme-color" content="#1a1a1a">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <!-- پیش‌نمایش در شبکه‌های اجتماعی -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fa_IR">
+  <meta property="og:title" content="AZ COFFEE | فروشگاه تخصصی قهوه">
+  <meta property="og:description" content="دانه‌ی کامل، آسیاب‌شده و ترکیبی با رست تازه.">
+
+  <!-- فونت وزیرمتن (اگر لود نشد، فونت‌های سیستم جایگزین می‌شوند) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#products">رفتن به محصولات</a>
+
+  <!-- ===== هدر ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#home" class="logo" aria-label="AZ COFFEE">AZ <span>COFFEE</span></a>
+
+      <nav id="site-nav" class="site-nav" aria-label="منوی اصلی">
+        <a href="#home">خانه</a>
+        <a href="#products">محصولات</a>
+        <a href="#about">درباره ما</a>
+        <a href="#contact">تماس</a>
+      </nav>
+
+      <div class="header-actions">
+        <button id="cart-open" class="icon-btn" type="button" aria-label="سبد خرید">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 4h2l2.4 11.2a1.5 1.5 0 0 0 1.5 1.2h8.2a1.5 1.5 0 0 0 1.5-1.1L20.5 8H6"/>
+            <circle cx="9.5" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/>
+          </svg>
+          <span id="cart-count" class="cart-count" hidden>0</span>
+        </button>
+        <button id="nav-toggle" class="icon-btn nav-toggle" type="button" aria-label="باز و بسته کردن منو" aria-expanded="false" aria-controls="site-nav">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== بخش قهرمان (متن‌ها از settings.json تغییر می‌کنند) ===== -->
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <p class="eyebrow" data-s="hero_eyebrow">قهوه‌ی تخصصی</p>
+        <h1 data-s="hero_title">هر فنجان، یک داستان تازه‌رست</h1>
+        <p class="hero-text" data-s="hero_text">دانه‌های منتخب، رست کنترل‌شده و ارسال در کمترین زمان؛ تا قهوه‌ی خانه‌ی شما هم کافه‌ای شود.</p>
+        <a href="#products" class="btn btn-primary">مشاهده محصولات</a>
+      </div>
+    </section>
+
+    <!-- ===== محصولات ===== -->
+    <section id="products" class="section">
+      <div class="container">
+        <h2 class="section-title">محصولات</h2>
+
+        <!-- دکمه‌های فیلتر با جاوااسکریپت ساخته می‌شوند -->
+        <div class="filters" id="filters" role="group" aria-label="فیلتر دسته‌بندی" hidden></div>
+
+        <p id="products-status" class="status" role="status">در حال بارگذاری محصولات…</p>
+        <noscript><p class="status">برای مشاهده و خرید محصولات، جاوااسکریپت مرورگر را فعال کنید.</p></noscript>
+        <div id="product-grid" class="product-grid"></div>
+      </div>
+    </section>
+
+    <!-- ===== درباره ما ===== -->
+    <section id="about" class="section section-alt">
+      <div class="container about">
+        <h2 class="section-title" data-s="about_title">درباره‌ی AZ COFFEE</h2>
+        <div id="about-text">
+          <p>ما قهوه را با وسواس انتخاب می‌کنیم؛ از مزرعه تا فنجان. هر محموله پیش از رست، فنجان‌گذاری می‌شود و فقط دانه‌هایی که استاندارد ما را پاس کنند به دست شما می‌رسند.</p>
+          <p>رست به‌صورت سفارشی و در دسته‌های کوچک انجام می‌شود تا همیشه تازه‌ترین طعم را تجربه کنید.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== تماس (از settings.json ساخته می‌شود) ===== -->
+    <section id="contact" class="section">
+      <div class="container contact">
+        <h2 class="section-title">تماس با ما</h2>
+        <ul id="contact-list" class="contact-list"></ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== فوتر ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="logo">AZ <span>COFFEE</span></div>
+      <div id="footer-socials" class="socials"></div>
+      <p class="copy">© <span id="year"></span> AZ COFFEE. تمامی حقوق محفوظ است.</p>
+    </div>
+  </footer>
+
+  <!-- ===== سبد خرید (پنل جانبی) ===== -->
+  <div id="cart-overlay" class="overlay" hidden></div>
+  <aside id="cart-drawer" class="drawer" role="dialog" aria-modal="true" aria-label="سبد خرید" inert>
+
+    <!-- نمای ۱: لیست سبد -->
+    <section id="view-cart" class="drawer-view">
+      <div class="drawer-head">
+        <h2>سبد خرید</h2>
+        <button id="cart-close" class="icon-btn" type="button" aria-label="بستن">✕</button>
+      </div>
+      <div class="drawer-body">
+        <p id="cart-empty" class="status">سبد خرید شما خالی است.</p>
+        <ul id="cart-items" class="cart-items"></ul>
+      </div>
+      <div class="drawer-foot">
+        <div class="total-row"><span>مجموع</span><strong id="cart-total">۰ تومان</strong></div>
+        <button id="btn-checkout" class="btn btn-primary btn-block" type="button" disabled>ادامه و تکمیل سفارش</button>
+      </div>
+    </section>
+
+    <!-- نمای ۲: فرم اطلاعات مشتری -->
+    <section id="view-checkout" class="drawer-view" hidden>
+      <div class="drawer-head">
+        <h2>اطلاعات سفارش</h2>
+        <button id="checkout-back" class="icon-btn" type="button" aria-label="بازگشت به سبد">→</button>
+      </div>
+      <form id="checkout-form" class="checkout-form" novalidate>
+        <div class="drawer-body">
+          <label for="f-name">نام و نام خانوادگی</label>
+          <input id="f-name" name="customer_name" type="text" autocomplete="name" required>
+
+          <label for="f-phone">شماره تماس</label>
+          <input id="f-phone" name="customer_phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="09123456789" dir="ltr" required>
+
+          <label for="f-address">آدرس کامل</label>
+          <textarea id="f-address" name="customer_address" rows="4" autocomplete="street-address" required></textarea>
+
+          <p id="shipping-note" class="note" hidden></p>
+          <p id="checkout-error" class="form-error" role="alert" hidden></p>
+        </div>
+        <div class="drawer-foot">
+          <div class="total-row"><span>مبلغ قابل پرداخت</span><strong id="checkout-total">۰ تومان</strong></div>
+          <button id="btn-submit" class="btn btn-primary btn-block" type="submit">پرداخت</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- نمای ۳: پیام تا زمان اتصال درگاه پرداخت -->
+    <section id="view-success" class="drawer-view" hidden>
+      <div class="drawer-head">
+        <h2>پرداخت</h2>
+        <button id="success-close" class="icon-btn" type="button" aria-label="بستن">✕</button>
+      </div>
+      <div class="drawer-body">
+        <p class="status">پرداخت آنلاین هنوز فعال نشده است. اطلاعات شما ثبت شد و سبد خریدتان حفظ می‌شود؛ لطفاً بعداً دوباره تلاش کنید.</p>
+      </div>
+    </section>
+  </aside>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+  <!-- برای اتصال درگاه پرداخت: فایل payment.js را بسازید و این خط را فعال کنید (راهنما در README) -->
+  <!-- <script src="payment.js"></script> -->
+</body>
+</html>
