@@ -3,56 +3,368 @@
     {
       "id": "az-001",
       "name": "اسپرسو بلند عربیکا برزیل",
-      "category": "دانه کامل",
-      "description": "۱۰۰٪ عربیکا با رست متوسط، طعم شکلات تلخ و بادام برشته",
-      "price": 520000,
-      "image": "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=640&q=70&auto=format&fit=crop",
-      "available": true
+      "category": "whole-bean",
+      "description": "۱۰۰٪ عربیکا با طعم شکلات تلخ و بادام برشته.\nمناسب اسپرسو و موکاپات.",
+      "image": "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=800&q=70&auto=format&fit=crop",
+      "available": true,
+      "price_250": 280000,
+      "price_500": 540000,
+      "price_1000": 1040000,
+      "price_per_kg_over": 1000000,
+      "prices": [
+        {
+          "weight": "500",
+          "roast": "دارک رست",
+          "blend_1": "",
+          "blend_2": "",
+          "price": 560000
+        },
+        {
+          "weight": "1000",
+          "roast": "دارک رست",
+          "blend_1": "",
+          "blend_2": "",
+          "price": 1080000
+        }
+      ]
     },
     {
       "id": "az-002",
       "name": "کلمبیا سوپریمو",
-      "category": "دانه کامل",
-      "description": "اسیدیته ملایم، بدنه‌ی کامل و نت‌های کارامل و میوه‌ی قرمز",
-      "price": 610000,
-      "image": "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=640&q=70&auto=format&fit=crop",
-      "available": true
+      "category": "whole-bean",
+      "description": "اسیدیته ملایم، بدنه‌ی کامل و نت‌های کارامل و میوه‌ی قرمز.",
+      "image": "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800&q=70&auto=format&fit=crop",
+      "available": true,
+      "price_250": 320000,
+      "price_500": 620000,
+      "price_1000": 1200000,
+      "price_per_kg_over": 1150000
     },
     {
       "id": "az-003",
       "name": "اتیوپی یرگاچف",
-      "category": "دانه کامل",
-      "description": "رست روشن با رایحه‌ی گل‌های وحشی، لیمو و عسل",
-      "price": 690000,
-      "image": "https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?w=640&q=70&auto=format&fit=crop",
-      "available": true
+      "category": "whole-bean",
+      "description": "رایحه‌ی گل‌های وحشی، لیمو و عسل.",
+      "image": "https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?w=800&q=70&auto=format&fit=crop",
+      "available": true,
+      "price_250": 360000,
+      "price_500": 700000,
+      "price_1000": 1360000,
+      "price_per_kg_over": 1300000
     },
     {
       "id": "az-004",
       "name": "آسیاب‌شده‌ی مخصوص فرنچ‌پرس",
-      "category": "آسیاب‌شده",
-      "description": "آسیاب درشت، طعمی غنی و کم‌اسیدیته برای دم‌آوری آرام",
-      "price": 480000,
-      "image": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=640&q=70&auto=format&fit=crop",
-      "available": true
+      "category": "ground",
+      "description": "آسیاب درشت، طعمی غنی و کم‌اسیدیته برای دم‌آوری آرام.",
+      "image": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&q=70&auto=format&fit=crop",
+      "available": true,
+      "price_250": 260000,
+      "price_500": 500000,
+      "price_1000": 960000,
+      "price_per_kg_over": 920000
     },
     {
       "id": "az-005",
       "name": "آسیاب‌شده‌ی مخصوص موکاپات",
-      "category": "آسیاب‌شده",
-      "description": "آسیاب متوسط، تلخی متعادل و کرمای پایدار برای موکاپات",
-      "price": 470000,
-      "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=640&q=70&auto=format&fit=crop",
-      "available": false
+      "category": "ground",
+      "description": "آسیاب متوسط، تلخی متعادل و کرمای پایدار برای موکاپات.",
+      "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=70&auto=format&fit=crop",
+      "available": false,
+      "price_250": 255000,
+      "price_500": 490000,
+      "price_1000": 940000,
+      "price_per_kg_over": 900000
     },
     {
       "id": "az-006",
       "name": "بلند خانگی AZ",
-      "category": "ترکیبی",
-      "description": "۷۰٪ عربیکا و ۳۰٪ روبوستا؛ پرکرما و پرانرژی برای اسپرسو و شیرقهوه",
-      "price": 430000,
-      "image": "https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=640&q=70&auto=format&fit=crop",
-      "available": true
+      "category": "blend",
+      "description": "ترکیب پرکرما و پرانرژی برای اسپرسو و شیرقهوه.\nنوع ربوستا و عربیکا را خودتان انتخاب کنید.",
+      "image": "https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=800&q=70&auto=format&fit=crop",
+      "available": true,
+      "price_250": 230000,
+      "price_500": 440000,
+      "price_1000": 840000,
+      "price_per_kg_over": 800000,
+      "prices": [
+        {
+          "weight": "250",
+          "roast": "",
+          "blend_1": "ویتنام",
+          "blend_2": "کلمبیا",
+          "price": 245000
+        },
+        {
+          "weight": "250",
+          "roast": "",
+          "blend_1": "ویتنام",
+          "blend_2": "برزیل",
+          "price": 240000
+        },
+        {
+          "weight": "250",
+          "roast": "",
+          "blend_1": "ویتنام",
+          "blend_2": "اتیوپی",
+          "price": 252000
+        },
+        {
+          "weight": "250",
+          "roast": "",
+          "blend_1": "هند",
+          "blend_2": "کلمبیا",
+          "price": 250000
+        },
+        {
+          "weight": "250",
+          "roast": "",
+          "blend_1": "هند",
+          "blend_2": "برزیل",
+          "price": 245000
+        },
+        {
+          "weight": "250",
+          "roast": "",
+          "blend_1": "هند",
+          "blend_2": "اتیوپی",
+          "price": 258000
+        },
+        {
+          "weight": "250",
+          "roast": "",
+          "blend_1": "اوگاندا",
+          "blend_2": "کلمبیا",
+          "price": 248000
+        },
+        {
+          "weight": "250",
+          "roast": "",
+          "blend_1": "اوگاندا",
+          "blend_2": "برزیل",
+          "price": 243000
+        },
+        {
+          "weight": "250",
+          "roast": "",
+          "blend_1": "اوگاندا",
+          "blend_2": "اتیوپی",
+          "price": 255000
+        },
+        {
+          "weight": "500",
+          "roast": "",
+          "blend_1": "ویتنام",
+          "blend_2": "کلمبیا",
+          "price": 470000
+        },
+        {
+          "weight": "500",
+          "roast": "",
+          "blend_1": "ویتنام",
+          "blend_2": "برزیل",
+          "price": 460000
+        },
+        {
+          "weight": "500",
+          "roast": "",
+          "blend_1": "ویتنام",
+          "blend_2": "اتیوپی",
+          "price": 485000
+        },
+        {
+          "weight": "500",
+          "roast": "",
+          "blend_1": "هند",
+          "blend_2": "کلمبیا",
+          "price": 480000
+        },
+        {
+          "weight": "500",
+          "roast": "",
+          "blend_1": "هند",
+          "blend_2": "برزیل",
+          "price": 470000
+        },
+        {
+          "weight": "500",
+          "roast": "",
+          "blend_1": "هند",
+          "blend_2": "اتیوپی",
+          "price": 495000
+        },
+        {
+          "weight": "500",
+          "roast": "",
+          "blend_1": "اوگاندا",
+          "blend_2": "کلمبیا",
+          "price": 475000
+        },
+        {
+          "weight": "500",
+          "roast": "",
+          "blend_1": "اوگاندا",
+          "blend_2": "برزیل",
+          "price": 465000
+        },
+        {
+          "weight": "500",
+          "roast": "",
+          "blend_1": "اوگاندا",
+          "blend_2": "اتیوپی",
+          "price": 490000
+        },
+        {
+          "weight": "1000",
+          "roast": "",
+          "blend_1": "ویتنام",
+          "blend_2": "کلمبیا",
+          "price": 900000
+        },
+        {
+          "weight": "1000",
+          "roast": "",
+          "blend_1": "ویتنام",
+          "blend_2": "برزیل",
+          "price": 880000
+        },
+        {
+          "weight": "1000",
+          "roast": "",
+          "blend_1": "ویتنام",
+          "blend_2": "اتیوپی",
+          "price": 930000
+        },
+        {
+          "weight": "1000",
+          "roast": "",
+          "blend_1": "هند",
+          "blend_2": "کلمبیا",
+          "price": 920000
+        },
+        {
+          "weight": "1000",
+          "roast": "",
+          "blend_1": "هند",
+          "blend_2": "برزیل",
+          "price": 900000
+        },
+        {
+          "weight": "1000",
+          "roast": "",
+          "blend_1": "هند",
+          "blend_2": "اتیوپی",
+          "price": 950000
+        },
+        {
+          "weight": "1000",
+          "roast": "",
+          "blend_1": "اوگاندا",
+          "blend_2": "کلمبیا",
+          "price": 910000
+        },
+        {
+          "weight": "1000",
+          "roast": "",
+          "blend_1": "اوگاندا",
+          "blend_2": "برزیل",
+          "price": 890000
+        },
+        {
+          "weight": "1000",
+          "roast": "",
+          "blend_1": "اوگاندا",
+          "blend_2": "اتیوپی",
+          "price": 940000
+        },
+        {
+          "weight": "custom",
+          "roast": "",
+          "blend_1": "ویتنام",
+          "blend_2": "کلمبیا",
+          "price": 860000
+        },
+        {
+          "weight": "custom",
+          "roast": "",
+          "blend_1": "ویتنام",
+          "blend_2": "برزیل",
+          "price": 840000
+        },
+        {
+          "weight": "custom",
+          "roast": "",
+          "blend_1": "ویتنام",
+          "blend_2": "اتیوپی",
+          "price": 890000
+        },
+        {
+          "weight": "custom",
+          "roast": "",
+          "blend_1": "هند",
+          "blend_2": "کلمبیا",
+          "price": 880000
+        },
+        {
+          "weight": "custom",
+          "roast": "",
+          "blend_1": "هند",
+          "blend_2": "برزیل",
+          "price": 860000
+        },
+        {
+          "weight": "custom",
+          "roast": "",
+          "blend_1": "هند",
+          "blend_2": "اتیوپی",
+          "price": 910000
+        },
+        {
+          "weight": "custom",
+          "roast": "",
+          "blend_1": "اوگاندا",
+          "blend_2": "کلمبیا",
+          "price": 870000
+        },
+        {
+          "weight": "custom",
+          "roast": "",
+          "blend_1": "اوگاندا",
+          "blend_2": "برزیل",
+          "price": 850000
+        },
+        {
+          "weight": "custom",
+          "roast": "",
+          "blend_1": "اوگاندا",
+          "blend_2": "اتیوپی",
+          "price": 900000
+        }
+      ]
+    },
+    {
+      "id": "az-007",
+      "name": "پودر قهوه فوری AZ",
+      "category": "instant",
+      "description": "قهوه فوری با طعم غنی؛ فقط با آب گرم یا شیر.",
+      "image": "images/placeholder.svg",
+      "available": true,
+      "price_250": 180000,
+      "price_500": 350000,
+      "price_1000": 680000,
+      "price_per_kg_over": 650000
+    },
+    {
+      "id": "az-008",
+      "name": "پودر شکلات AZ",
+      "category": "chocolate",
+      "description": "پودر شکلات تلخ برای نوشیدنی گرم و دسر.",
+      "image": "images/placeholder.svg",
+      "available": true,
+      "price_250": 150000,
+      "price_500": 290000,
+      "price_1000": 560000,
+      "price_per_kg_over": 540000
     }
   ]
 }
