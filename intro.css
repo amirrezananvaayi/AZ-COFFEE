@@ -1,0 +1,149 @@
+/* ==========================================================
+   انیمیشن شروع سایت — فقط ۳ رنگ برند
+   ========================================================== */
+#intro { display: none; }
+html.intro-on { overflow: hidden; }
+html.intro-on #intro {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  position: fixed; inset: 0; z-index: 200; background: #1a1a1a; direction: ltr;
+}
+/* تا پایان انیمیشن، بقیه‌ی سایت دیده نمی‌شود */
+html.intro-on:not(.intro-reveal) body > :not(#intro):not(script) { visibility: hidden; }
+html.intro-reveal body > :not(#intro):not(#bg-logo):not(script) { animation: siteIn 1.4s ease both; }
+@keyframes siteIn { from { opacity: 0; } to { opacity: 1; } }
+
+#intro-svg { width: min(92vw, 520px); height: min(72vh, 78vw * 1.5); max-height: 78vh; }
+.intro-cap {
+  position: absolute; bottom: 14vh; left: 0; right: 0; text-align: center; direction: rtl;
+  color: #c9a86a; font-size: 1.15rem; font-weight: 500; letter-spacing: .02em;
+  opacity: 0; transition: opacity .5s;
+}
+.intro-cap.show { opacity: 1; }
+.intro-skip {
+  position: absolute; bottom: 4vh; left: 50%; transform: translateX(-50%);
+  color: rgba(245,240,232,.6); font-size: .85rem; padding: 6px 18px; border-radius: 999px;
+  border: 1px solid rgba(245,240,232,.2); direction: rtl;
+}
+.intro-skip:hover, .intro-skip:focus-visible { color: #f5f0e8; border-color: #c9a86a; }
+.intro-progress { position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: rgba(245,240,232,.08); }
+.intro-progress i { display: block; height: 100%; width: 0; background: #c9a86a; }
+
+/* لوگو */
+.brand-mark {
+  font-family: 'Vazirmatn', Arial, sans-serif; font-weight: 700; direction: ltr; white-space: nowrap;
+  font-size: clamp(2.2rem, 12vw, 5.4rem); letter-spacing: .08em; color: #f5f0e8; text-align: center;
+}
+.brand-mark .cf { color: #c9a86a; font-weight: 300; }
+#intro-logo { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0; z-index: 3; }
+#bg-logo {
+  position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  z-index: 1; opacity: .06; pointer-events: none; user-select: none;
+}
+html.intro-on:not(.intro-reveal) #bg-logo { visibility: hidden; }
+html.intro-reveal #bg-logo { animation: bgIn 1.4s ease both; }
+@keyframes bgIn { from { opacity: 0; } to { opacity: .06; } }
+
+/* پایان: لوگو ظاهر و کم‌رنگ می‌شود، پرده برداشته می‌شود */
+#intro.logo-stage #intro-svg, #intro.logo-stage .intro-cap, #intro.logo-stage .intro-skip,
+#intro.logo-stage .intro-progress { opacity: 0; transition: opacity .6s; }
+#intro.logo-stage #intro-logo { opacity: 1; transition: opacity 1s; }
+#intro.out { background: transparent; transition: background 1.4s ease; pointer-events: none; }
+#intro.out #intro-logo { opacity: 0; transition: opacity 1.4s ease; }
+
+/* ---------- نقاشی‌ها ---------- */
+#intro-svg .sc { opacity: 0; transition: opacity .6s; }
+#intro-svg .sc.on { opacity: 1; }
+#intro-svg .ln { fill: none; stroke: #f5f0e8; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; opacity: .85; }
+#intro-svg .ln.thin { stroke-width: 1.2; opacity: .45; }
+#intro-svg .ln.thick { stroke: #c9a86a; stroke-width: 4; opacity: 1; }
+#intro-svg .gold { fill: #c9a86a; }
+#intro-svg .cherry { fill: #c9a86a; stroke: #f5f0e8; stroke-width: 1; }
+#intro-svg .leaf { fill: rgba(201,168,106,.14); stroke: #c9a86a; stroke-width: 1.6; }
+#intro-svg .soft { fill: rgba(245,240,232,.06); }
+#intro-svg .soft2 { fill: rgba(201,168,106,.1); }
+#intro-svg .body, #intro-svg .tank, #intro-svg .bagbody, #intro-svg .basket {
+  fill: #1a1a1a; stroke: #c9a86a; stroke-width: 2.4; stroke-linejoin: round;
+}
+#intro-svg .tank { fill: rgba(245,240,232,.04); stroke: #f5f0e8; }
+#intro-svg .bean { fill: #c9a86a; }
+#intro-svg .cut { fill: none; stroke: #1a1a1a; stroke-width: 1.4; stroke-linecap: round; }
+#intro-svg .water { fill: rgba(201,168,106,.28); }
+#intro-svg .plank { fill: rgba(245,240,232,.3); }
+#intro-svg .label { fill: rgba(245,240,232,.07); stroke: rgba(245,240,232,.5); stroke-width: 1.2; }
+#intro-svg .sealr { fill: rgba(201,168,106,.25); stroke: #c9a86a; stroke-width: 1.6; }
+#intro-svg .t-az { font: 700 38px 'Vazirmatn', Arial, sans-serif; fill: #f5f0e8; letter-spacing: 4px; }
+#intro-svg .t-cf { font: 400 15px 'Vazirmatn', Arial, sans-serif; fill: #c9a86a; letter-spacing: 7px; }
+#intro-svg .stream { stroke: #c9a86a; stroke-width: 3; stroke-linecap: round; stroke-dasharray: 6 8; opacity: 0; }
+#intro-svg .drop { fill: #c9a86a; opacity: 0; }
+#intro-svg .smoke { fill: rgba(245,240,232,.25); opacity: 0; }
+#intro-svg .bub { fill: none; stroke: #f5f0e8; stroke-width: 1.2; opacity: 0; }
+#intro-svg .steam { fill: none; stroke: #f5f0e8; stroke-width: 2.4; stroke-linecap: round; opacity: 0; }
+#intro-svg .coffee { fill: #c9a86a; transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(0); }
+#intro-svg .crema { fill: #f5f0e8; opacity: 0; }
+
+#intro-svg .sc.on .sun { animation: sunUp 2.6s ease-out both; }
+@keyframes sunUp { from { transform: translateY(70px); opacity: .2; } to { transform: none; opacity: .95; } }
+#intro-svg .sway { transform-box: fill-box; transform-origin: 50% 100%; }
+#intro-svg .sc.on .sway { animation: sway 2s ease-in-out infinite alternate; }
+#intro-svg .sc.on .sway.d2 { animation-delay: -.7s; } #intro-svg .sc.on .sway.d3 { animation-delay: -1.3s; }
+@keyframes sway { from { transform: rotate(-2deg); } to { transform: rotate(2deg); } }
+
+#intro-svg .fall { opacity: 0; }
+#intro-svg .sc.on .fall { animation: fall .7s cubic-bezier(.5,0,.9,.6) var(--d) both; }
+@keyframes fall { from { opacity: 1; transform: translateY(-230px); } to { opacity: 1; transform: translateY(0); } }
+#intro-svg .sc.on .hang { animation: dim 3s ease-in forwards; }
+@keyframes dim { to { opacity: .25; } }
+
+#intro-svg .sc.on .stream { animation: flow .6s linear infinite, show .3s .1s forwards; }
+@keyframes flow { to { stroke-dashoffset: -14; } }
+@keyframes show { to { opacity: 1; } }
+#intro-svg .sc.on .waves { animation: wave 1.6s linear infinite; }
+@keyframes wave { to { transform: translateX(-80px); } }
+#intro-svg .bob { transform-box: fill-box; transform-origin: center; }
+#intro-svg .sc.on .bob { animation: bob 1.4s ease-in-out infinite alternate; }
+#intro-svg .sc.on .bob.d2 { animation-delay: -.5s; } #intro-svg .sc.on .bob.d3 { animation-delay: -1s; }
+@keyframes bob { from { transform: translateY(-6px) rotate(-8deg); } to { transform: translateY(6px) rotate(8deg); } }
+#intro-svg .sc.on .bub { animation: bubble 1.6s ease-out infinite; }
+#intro-svg .sc.on .b2 { animation-delay: -.5s; } #intro-svg .sc.on .b3 { animation-delay: -1s; }
+@keyframes bubble { 0% { opacity: .9; transform: translateY(0); } 100% { opacity: 0; transform: translateY(-40px); } }
+
+#intro-svg .sc.on .rays { animation: rot 12s linear infinite; }
+#intro-svg .rays { transform-box: view-box; }
+@keyframes rot { to { transform: translate(200px, 220px) rotate(360deg); } }
+#intro-svg .sc.on .rake { animation: rake 2.4s ease-in-out infinite alternate; }
+@keyframes rake { from { transform: translateX(-90px); } to { transform: translateX(90px); } }
+
+#intro-svg .spin { transform-box: view-box; transform-origin: 200px 364px; }
+#intro-svg .sc.on .spin { animation: spin 3.2s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+#intro-svg .flames path { transform-box: fill-box; transform-origin: 50% 100%; }
+#intro-svg .sc.on .flames path { animation: flick .35s ease-in-out infinite alternate; }
+#intro-svg .sc.on .flames path:nth-child(2) { animation-delay: -.15s; }
+@keyframes flick { from { transform: scaleY(.8); } to { transform: scaleY(1.2); } }
+#intro-svg .sc.on .smoke { animation: smoke 2s ease-out infinite; }
+#intro-svg .sc.on .sm2 { animation-delay: -.7s; } #intro-svg .sc.on .sm3 { animation-delay: -1.3s; }
+@keyframes smoke { 0% { opacity: .5; transform: translateY(0) scale(.6); } 100% { opacity: 0; transform: translateY(-70px) scale(1.6); } }
+
+#intro-svg .sc.on .drop { animation: drop .6s ease-in var(--d) both; }
+@keyframes drop { 0% { opacity: 1; transform: translateY(0); } 85% { opacity: 1; } 100% { opacity: 0; transform: translateY(125px); } }
+#intro-svg .bag { transform-box: fill-box; transform-origin: 50% 100%; }
+#intro-svg .sc.on .bag { animation: pop 1s ease-out both; }
+@keyframes pop { from { opacity: 0; transform: scale(.85) translateY(20px); } to { opacity: 1; transform: none; } }
+#intro-svg .seal { opacity: 0; }
+#intro-svg .sc.on .seal { animation: show .6s 1.6s forwards; }
+
+#intro-svg .sc.on .s-a { animation: flow .5s linear infinite, show .3s .5s forwards; }
+#intro-svg .sc.on .s-b { animation: flow .5s linear infinite -.2s, show .3s .5s forwards; }
+#intro-svg .sc.on .coffee { animation: fillup 2.6s ease-in-out .7s forwards; }
+@keyframes fillup { to { transform: scaleY(1); } }
+#intro-svg .sc.on .crema { animation: show .6s 3s forwards; }
+#intro-svg .sc.on .steam { animation: steam 1.8s ease-out 3s infinite; }
+#intro-svg .sc.on .st2 { animation-delay: 3.4s; } #intro-svg .sc.on .st3 { animation-delay: 3.8s; }
+@keyframes steam { 0% { opacity: 0; transform: translateY(10px); } 40% { opacity: .8; } 100% { opacity: 0; transform: translateY(-16px); } }
+
+@media (prefers-reduced-motion: reduce) { #intro { display: none !important; } }
+
+/* عناصر داخل symbol بوته (انتخابگر والد روی نسخه‌ی کپی‌شده اعمال نمی‌شود) */
+#bush .leaf { fill: rgba(201,168,106,.18); stroke: #c9a86a; stroke-width: 1.6; }
+#bush .ln { fill: none; stroke: #f5f0e8; stroke-width: 1.6; stroke-linecap: round; opacity: .7; }
+#bush .cherry { fill: #c9a86a; stroke: #f5f0e8; stroke-width: .8; }
