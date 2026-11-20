@@ -1,0 +1,174 @@
+# ==========================================================
+# تنظیمات پنل مدیریت AZ COFFEE (Decap CMS)
+# فقط سه مقدار «YOUR-...» را عوض کنید (راهنما: README، بخش ۵)
+# ==========================================================
+
+backend:
+  name: github
+  repo: YOUR-USERNAME/YOUR-REPO          # مثلاً amirrezananvaayi/AZ-COFFEE
+  branch: main
+  base_url: https://YOUR-OAUTH-WORKER.workers.dev   # آدرس Worker ورود (پوشه‌ی azcoffee-oauth-worker)
+
+locale: fa
+search: false
+publish_mode: simple
+
+# محل ذخیره‌ی عکس‌های آپلودی و مسیری که در فایل‌های JSON نوشته می‌شود
+media_folder: "images/uploads"
+public_folder: "images/uploads"
+
+collections:
+  - name: "shop"
+    label: "فروشگاه"
+    files:
+
+      # ---------- دسته‌بندی‌ها ----------
+      - name: "categories"
+        label: "دسته‌بندی‌ها"
+        file: "categories.json"
+        format: json
+        fields:
+          - label: "دسته‌بندی‌ها"
+            name: "categories"
+            widget: list
+            label_singular: "دسته‌بندی"
+            summary: "{{fields.name}}"
+            fields:
+              - label: "شناسه (یکتا، انگلیسی)"
+                name: "id"
+                widget: string
+                hint: "مثلاً whole-bean — بعد از ثبت تغییر ندهید، چون محصولات با همین شناسه به دسته وصل‌اند"
+                pattern: ['^[A-Za-z0-9-]+$', "فقط حروف انگلیسی، عدد و خط تیره"]
+              - { label: "نام دسته‌بندی (عنوان کارت)", name: "name", widget: string }
+              - { label: "توضیح کوتاه", name: "description", widget: string, required: false }
+              - { label: "عکس کارت", name: "image", widget: image, required: false, hint: "عکس افقی؛ در نیمه‌ی بالای کارت و محو‌شونده نمایش داده می‌شود" }
+              - { label: "نمایش گزینه‌ی «میزان رست»", name: "show_roast", widget: boolean, default: true, hint: "برای پودر شکلات و قهوه فوری خاموش کنید" }
+              - { label: "نمایش «نوع قهوه ربوستا / عربیکا»", name: "show_blend", widget: boolean, default: false, hint: "فقط برای دسته‌ی قهوه ترکیبی روشن کنید" }
+
+      # ---------- محصولات و تعرفه‌ی هر محصول ----------
+      - name: "products"
+        label: "محصولات و قیمت‌ها"
+        file: "products.json"
+        format: json
+        fields:
+          - label: "محصولات"
+            name: "products"
+            widget: list
+            label_singular: "محصول"
+            summary: "{{fields.name}} — {{fields.price_1000}}"
+            fields:
+              - label: "شناسه (یکتا، انگلیسی)"
+                name: "id"
+                widget: string
+                hint: "مثلاً az-009 — برای هر محصول باید متفاوت باشد و بعداً تغییر نکند"
+                pattern: ['^[A-Za-z0-9-]+$', "فقط حروف انگلیسی، عدد و خط تیره"]
+              - { label: "نام محصول", name: "name", widget: string }
+              - label: "دسته‌بندی"
+                name: "category"
+                widget: relation
+                collection: "shop"
+                file: "categories"
+                search_fields: ["categories.*.name"]
+                value_field: "categories.*.id"
+                display_fields: ["categories.*.name"]
+              - { label: "توضیحات محصول (هر خط یک پاراگراف)", name: "description", widget: text, required: false }
+              - { label: "عکس محصول", name: "image", widget: image, required: false, hint: "عکس افقی (۴:۳)؛ بالای صفحه‌ی محصول نمایش داده می‌شود" }
+              - { label: "موجود است", name: "available", widget: boolean, default: true }
+              - { label: "قیمت ۲۵۰ گرم (تومان)", name: "price_250", widget: number, value_type: int, min: 0, required: false }
+              - { label: "قیمت ۵۰۰ گرم (تومان)", name: "price_500", widget: number, value_type: int, min: 0, required: false }
+              - { label: "قیمت ۱ کیلوگرم (تومان)", name: "price_1000", widget: number, value_type: int, min: 0, required: false }
+              - { label: "قیمت هر کیلوگرم برای «بیش از ۱ کیلوگرم» (تومان)", name: "price_per_kg_over", widget: number, value_type: int, min: 0, required: false, hint: "برای وزن دلخواه مشتری؛ اگر خالی بماند از قیمت ۱ کیلوگرم استفاده می‌شود" }
+          - label: "تعرفه‌ی ترکیب‌ها (قیمت هر ترکیب از وزن، رست و نوع قهوه)"
+            name: "prices"
+            widget: list
+            required: false
+            label_singular: "قیمت ترکیب"
+            summary: "{{fields.weight}} | {{fields.roast}} | {{fields.blend_1}} | {{fields.blend_2}} ← {{fields.price}}"
+            hint: "هر ردیف = قیمت یک ترکیب. فیلدی که خالی بماند یعنی «همه‌ی حالت‌ها». اگر چند ردیف جور باشد، ردیف دقیق‌تر اعمال می‌شود. برای ترکیبی که ردیف ندارد، قیمت‌های پایه‌ی بالا اعمال می‌شود."
+            fields:
+              - label: "وزن"
+                name: "weight"
+                widget: select
+                options:
+                  - { label: "۲۵۰ گرم", value: "250" }
+                  - { label: "۵۰۰ گرم", value: "500" }
+                  - { label: "۱ کیلوگرم", value: "1000" }
+                  - { label: "بیش از ۱ کیلوگرم (قیمت هر کیلوگرم)", value: "custom" }
+              - { label: "میزان رست (دقیقاً مثل نام گزینه؛ خالی = همه)", name: "roast", widget: string, required: false }
+              - { label: "نوع قهوه ربوستا (دقیقاً مثل نام زیرشاخه؛ خالی = همه)", name: "blend_1", widget: string, required: false }
+              - { label: "نوع قهوه عربیکا (دقیقاً مثل نام زیرشاخه؛ خالی = همه)", name: "blend_2", widget: string, required: false }
+              - { label: "قیمت (تومان)", name: "price", widget: number, value_type: int, min: 0 }
+
+      # ---------- گزینه‌ها و تعرفه‌ی گزینه‌ها ----------
+      - name: "options"
+        label: "گزینه‌ها (وزن، رست، نوع قهوه)"
+        file: "options.json"
+        format: json
+        fields:
+          - label: "وزن"
+            name: "weight"
+            widget: object
+            fields:
+              - { label: "عنوان بخش", name: "title", widget: string, required: false }
+              - { label: "برچسب گزینه‌ی ۲۵۰ گرم", name: "label_250", widget: string, required: false }
+              - { label: "برچسب گزینه‌ی ۵۰۰ گرم", name: "label_500", widget: string, required: false }
+              - { label: "برچسب گزینه‌ی ۱ کیلوگرم", name: "label_1000", widget: string, required: false }
+              - { label: "برچسب گزینه‌ی «بیش از ۱ کیلوگرم»", name: "label_custom", widget: string, required: false }
+              - { label: "متن راهنمای کادر وزن دلخواه", name: "custom_hint", widget: string, required: false }
+              - { label: "حداکثر وزن دلخواه (کیلوگرم)", name: "custom_max", widget: number, value_type: int, min: 2, required: false }
+
+          - label: "میزان رست"
+            name: "roast"
+            widget: object
+            fields:
+              - { label: "عنوان بخش", name: "title", widget: string, required: false }
+              - label: "گزینه‌ها (ترتیب لیست = ترتیب نمایش از راست به چپ)"
+                name: "options"
+                widget: list
+                label_singular: "گزینه"
+                summary: "{{fields.label}}"
+                fields:
+                  - { label: "نام گزینه", name: "label", widget: string }
+
+          - label: "نوع قهوه (فقط دسته‌هایی که «نمایش نوع قهوه»شان روشن است)"
+            name: "blend"
+            widget: object
+            fields:
+              - label: "گروه‌ها (مثلاً «نوع قهوه ربوستا» و «نوع قهوه عربیکا»)"
+                name: "groups"
+                widget: list
+                label_singular: "گروه"
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "عنوان گروه", name: "title", widget: string }
+                  - label: "زیرشاخه‌ها (مثلاً ویتنام، کلمبیا)"
+                    name: "options"
+                    widget: list
+                    label_singular: "زیرشاخه"
+                    summary: "{{fields.label}}"
+                    fields:
+                      - { label: "نام زیرشاخه", name: "label", widget: string }
+
+          - { label: "گرد کردن قیمت نهایی به مضرب (تومان)", name: "rounding", widget: number, value_type: int, min: 1, default: 1000, required: false, hint: "مثلاً ۱۰۰۰ یعنی قیمت‌ها به نزدیک‌ترین هزار تومان گرد می‌شوند" }
+
+      # ---------- تنظیمات سایت ----------
+      - name: "settings"
+        label: "تنظیمات سایت و تماس"
+        file: "settings.json"
+        format: json
+        fields:
+          - { label: "متن کوچک بالای تیتر", name: "hero_eyebrow", widget: string, required: false }
+          - { label: "تیتر صفحه‌ی اصلی", name: "hero_title", widget: string, required: false }
+          - { label: "متن زیر تیتر", name: "hero_text", widget: text, required: false }
+          - { label: "عنوان «درباره ما»", name: "about_title", widget: string, required: false }
+          - { label: "متن «درباره ما» (هر خط یک پاراگراف)", name: "about_text", widget: text, required: false }
+          - { label: "متن بخش «پشتیبانی»", name: "support_text", widget: text, required: false }
+          - { label: "تلفن", name: "phone", widget: string, required: false, hint: "مثلاً 09123456789" }
+          - { label: "شماره‌ی واتس‌اپ", name: "whatsapp", widget: string, required: false, hint: "شماره‌ی تلفن، نه آیدی؛ مثلاً 09123456789" }
+          - { label: "آیدی تلگرام", name: "telegram", widget: string, required: false, hint: "بدون @ ، مثلاً azcoffee_shop" }
+          - { label: "آیدی روبیکا", name: "rubika", widget: string, required: false, hint: "بدون @" }
+          - { label: "آیدی اینستاگرام", name: "instagram", widget: string, required: false, hint: "بدون @" }
+          - { label: "ایمیل", name: "email", widget: string, required: false }
+          - { label: "آدرس", name: "address", widget: text, required: false }
+          - { label: "ساعت کاری", name: "working_hours", widget: string, required: false }
+          - { label: "توضیح ارسال (زیر فرم پرداخت نمایش داده می‌شود)", name: "shipping_note", widget: string, required: false, hint: "مثلاً: هزینه‌ی ارسال هنگام تحویل محاسبه می‌شود" }
