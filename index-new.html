@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AZ COFFEE | فروشگاه تخصصی قهوه</title>
+  <meta name="description" content="AZ COFFEE؛ فروشگاه تخصصی قهوه. دانه‌ی کامل، آسیاب‌شده، ترکیبی، قهوه فوری و پودر شکلات با رست تازه.">
+  <meta name="theme-color" content="#1a1a1a">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fa_IR">
+  <meta property="og:title" content="AZ COFFEE | فروشگاه تخصصی قهوه">
+  <meta property="og:description" content="قهوه‌ی تازه‌رست با انتخاب وزن، رست و نوع قهوه.">
+
+  <!-- فونت وزیرمتن (اگر لود نشد، فونت‌های سیستم جایگزین می‌شوند) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- تصمیم برای نمایش انیمیشن شروع (قبل از رسم صفحه تا سایت لحظه‌ای دیده نشود) -->
+  <script>
+    (function () {
+      try {
+        var seen = sessionStorage.getItem('az_intro_seen');
+        var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!seen && !reduce) {
+          document.documentElement.classList.add('intro-on');
+          // اگر به هر دلیل انیمیشن اجرا نشد، بعد از ۴۵ ثانیه سایت نمایش داده می‌شود
+          setTimeout(function () { document.documentElement.classList.remove('intro-on'); }, 45000);
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="intro.css">
+</head>
+<body>
+  <!-- ===== انیمیشن شروع سایت (مزرعه تا فنجان) — فایل‌های intro.css و intro.js ===== -->
+  <div id="intro" aria-label="انیمیشن معرفی AZ COFFEE" role="img">
+    <svg id="intro-svg" viewBox="0 0 400 600" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+      <defs>
+        <symbol id="bush" viewBox="-30 -40 60 44">
+          <ellipse cx="0" cy="-16" rx="26" ry="20" class="leaf"/>
+          <path d="M-14 -22 Q0 -34 14 -22 M-18 -12 Q0 -24 18 -12" class="ln"/>
+          <circle cx="-12" cy="-12" r="3.4" class="cherry"/><circle cx="8" cy="-18" r="3.4" class="cherry"/>
+          <circle cx="14" cy="-8" r="3.4" class="cherry"/><circle cx="-2" cy="-6" r="3.4" class="cherry"/>
+          <path d="M0 0 V-6" class="ln"/>
+        </symbol>
+        <pattern id="beanpat" width="14" height="10" patternUnits="userSpaceOnUse">
+          <ellipse cx="7" cy="5" rx="5" ry="3.4" fill="#c9a86a" opacity=".85"/>
+          <path d="M3 6 Q7 3 11 4" stroke="#1a1a1a" stroke-width="1" fill="none"/>
+        </pattern>
+        <linearGradient id="fadeX" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".25" stop-color="#fff"/><stop offset=".75" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+        <mask id="hillmask" maskUnits="userSpaceOnUse" x="0" y="0" width="400" height="600"><rect width="400" height="600" fill="url(#fadeX)"/></mask>
+        <clipPath id="cupclip"><path d="M153 384 H247 V420 Q247 466 200 466 Q153 466 153 420Z"/></clipPath>
+        <clipPath id="tankclip"><rect x="112" y="302" width="176" height="136" rx="12"/></clipPath>
+      </defs>
+
+      <!-- ۱) مزرعه -->
+      <g class="sc" id="s1" data-cap="مزرعه‌ی قهوه">
+        <circle class="sun gold" cx="200" cy="270" r="40"/>
+        <g mask="url(#hillmask)"><path d="M0 400 Q100 330 200 385 T400 360 V520 H0Z" class="soft"/>
+        <path d="M0 450 Q120 400 230 440 T400 430 V540 H0Z" class="soft2"/></g>
+        <g class="sway"><use href="#bush" x="70" y="410" width="60" height="44"/></g>
+        <g class="sway d2"><use href="#bush" x="170" y="405" width="60" height="44"/></g>
+        <g class="sway d3"><use href="#bush" x="270" y="410" width="60" height="44"/></g>
+        <g class="sway d2"><use href="#bush" x="20" y="470" width="80" height="60"/></g>
+        <g class="sway"><use href="#bush" x="160" y="470" width="80" height="60"/></g>
+        <g class="sway d3"><use href="#bush" x="300" y="470" width="80" height="60"/></g>
+      </g>
+
+      <!-- ۲) برداشت -->
+      <g class="sc" id="s2" data-cap="برداشت میوه‌ی قهوه">
+        <path d="M40 150 Q150 190 260 150 T380 190" class="ln thick"/>
+        <ellipse cx="90" cy="150" rx="22" ry="9" class="leaf" transform="rotate(-20 90 150)"/>
+        <ellipse cx="200" cy="172" rx="22" ry="9" class="leaf" transform="rotate(15 200 172)"/>
+        <ellipse cx="320" cy="170" rx="22" ry="9" class="leaf" transform="rotate(-25 320 170)"/>
+        <g class="hang"><circle cx="130" cy="190" r="9" class="cherry"/><circle cx="152" cy="196" r="9" class="cherry"/></g>
+        <g class="hang"><circle cx="250" cy="170" r="9" class="cherry"/><circle cx="272" cy="176" r="9" class="cherry"/><circle cx="300" cy="186" r="9" class="cherry"/></g>
+        <g class="fallgrp">
+          <circle class="fall cherry" style="--d:.2s" cx="165" cy="412" r="9"/>
+          <circle class="fall cherry" style="--d:.5s" cx="190" cy="406" r="9"/>
+          <circle class="fall cherry" style="--d:.8s" cx="215" cy="408" r="9"/>
+          <circle class="fall cherry" style="--d:1.1s" cx="240" cy="412" r="9"/>
+          <circle class="fall cherry" style="--d:1.4s" cx="178" cy="396" r="9"/>
+          <circle class="fall cherry" style="--d:1.7s" cx="205" cy="394" r="9"/>
+          <circle class="fall cherry" style="--d:2s" cx="228" cy="397" r="9"/>
+        </g>
+        <path d="M130 420 H270 L252 492 H148Z" class="basket"/>
+        <path d="M137 445 H263 M142 468 H258 M170 420 L164 492 M200 420 V492 M230 420 L236 492" class="ln thin"/>
+      </g>
+
+      <!-- ۳) فراوری و شست‌وشو -->
+      <g class="sc" id="s3" data-cap="فراوری و شست‌وشو">
+        <rect x="186" y="210" width="28" height="70" rx="4" class="ln"/>
+        <line x1="200" y1="282" x2="200" y2="330" class="stream"/>
+        <rect x="112" y="302" width="176" height="136" rx="12" class="tank"/>
+        <g clip-path="url(#tankclip)">
+          <g class="waves"><path d="M60 340 q20 -12 40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 t40 0 V440 H60Z" class="water"/></g>
+          <g class="bob"><ellipse cx="150" cy="372" rx="12" ry="8" class="bean"/><path d="M142 374 Q150 366 158 370" class="cut"/></g>
+          <g class="bob d2"><ellipse cx="200" cy="392" rx="12" ry="8" class="bean"/><path d="M192 394 Q200 386 208 390" class="cut"/></g>
+          <g class="bob d3"><ellipse cx="248" cy="370" rx="12" ry="8" class="bean"/><path d="M240 372 Q248 364 256 368" class="cut"/></g>
+          <g class="bob d2"><ellipse cx="170" cy="414" rx="12" ry="8" class="bean"/></g>
+          <g class="bob"><ellipse cx="232" cy="418" rx="12" ry="8" class="bean"/></g>
+        </g>
+        <circle class="bub b1" cx="170" cy="360" r="3"/><circle class="bub b2" cx="220" cy="380" r="4"/><circle class="bub b3" cx="260" cy="350" r="3"/>
+      </g>
+
+      <!-- ۴) خشک کردن -->
+      <g class="sc" id="s4" data-cap="خشک کردن زیر آفتاب">
+        <g class="rays" transform="translate(200 220)">
+          <circle r="26" class="gold"/>
+          <path d="M0 -44V-36M0 44V36M-44 0H-36M44 0H36M-31 -31L-25 -25M31 31L25 25M-31 31L-25 25M31 -31L25 -25" class="ln thick"/>
+        </g>
+        <rect x="70" y="372" width="260" height="16" rx="8" fill="url(#beanpat)"/>
+        <rect x="64" y="388" width="272" height="10" rx="3" class="plank"/>
+        <path d="M84 398 V462 M316 398 V462 M84 430 H316" class="ln"/>
+        <g class="rake"><path d="M200 330 V372 M188 372 H212 M190 372 V382 M200 372 V382 M210 372 V382" class="ln thick"/></g>
+      </g>
+
+      <!-- ۵) رست -->
+      <g class="sc" id="s5" data-cap="رست تازه">
+        <path d="M110 282 H150 L138 238 H122Z" class="body"/>
+        <rect x="262" y="196" width="24" height="86" rx="4" class="body"/>
+        <circle class="smoke sm1" cx="274" cy="190" r="9"/><circle class="smoke sm2" cx="274" cy="190" r="12"/><circle class="smoke sm3" cx="274" cy="190" r="8"/>
+        <rect x="96" y="282" width="208" height="170" rx="18" class="body"/>
+        <circle cx="200" cy="364" r="56" class="ln"/>
+        <g class="spin"><ellipse cx="200" cy="330" rx="12" ry="8" class="bean"/><ellipse cx="236" cy="372" rx="12" ry="8" class="bean"/><ellipse cx="170" cy="388" rx="12" ry="8" class="bean"/><ellipse cx="172" cy="350" rx="12" ry="8" class="bean"/><ellipse cx="214" cy="396" rx="12" ry="8" class="bean"/><path d="M200 364 L200 312 M200 364 L250 380 M200 364 L156 384" class="ln thin"/></g>
+        <circle cx="200" cy="364" r="5" class="gold"/>
+        <g class="flames"><path d="M130 454 q8 -26 16 0 q4 -16 12 0 Z" class="gold"/><path d="M184 454 q10 -34 20 0 q5 -20 14 0 Z" class="gold"/><path d="M240 454 q8 -26 16 0 q4 -16 12 0 Z" class="gold"/></g>
+      </g>
+
+      <!-- ۶) بسته‌بندی -->
+      <g class="sc" id="s6" data-cap="بسته‌بندی AZ COFFEE">
+        <ellipse class="drop" style="--d:.2s" cx="190" cy="120" rx="9" ry="6"/><ellipse class="drop" style="--d:.45s" cx="210" cy="120" rx="9" ry="6"/>
+        <ellipse class="drop" style="--d:.7s" cx="200" cy="120" rx="9" ry="6"/><ellipse class="drop" style="--d:.95s" cx="184" cy="120" rx="9" ry="6"/>
+        <ellipse class="drop" style="--d:1.2s" cx="216" cy="120" rx="9" ry="6"/>
+        <g class="bag">
+          <path d="M120 250 H280 V470 Q280 484 266 484 H134 Q120 484 120 470Z" class="bagbody"/>
+          <g class="seal"><rect x="120" y="232" width="160" height="20" rx="3" class="sealr"/><path d="M128 232 l8 20 M144 232 l8 20 M160 232 l8 20 M176 232 l8 20 M192 232 l8 20 M208 232 l8 20 M224 232 l8 20 M240 232 l8 20 M256 232 l8 20" class="ln thin"/></g>
+          <rect x="138" y="290" width="124" height="150" rx="6" class="label"/>
+          <ellipse cx="200" cy="326" rx="14" ry="10" class="gold" transform="rotate(-25 200 326)"/>
+          <path d="M188 332 Q200 322 212 320" class="cut"/>
+          <text x="200" y="380" class="t-az" text-anchor="middle">AZ</text>
+          <text x="200" y="410" class="t-cf" text-anchor="middle">COFFEE</text>
+        </g>
+      </g>
+
+      <!-- ۷) عصاره‌گیری و فنجان -->
+      <g class="sc" id="s7" data-cap="عصاره‌گیری و یک فنجان قهوه">
+        <rect x="110" y="140" width="180" height="130" rx="14" class="body"/>
+        <circle cx="150" cy="180" r="15" class="ln"/><path d="M150 180 L158 172" class="ln"/>
+        <path d="M200 170 H262 M200 190 H240" class="ln thin"/>
+        <rect x="166" y="270" width="68" height="18" rx="4" class="body"/>
+        <path d="M176 288 H224 V298 H176Z M224 292 H282" class="ln thick"/>
+        <line x1="190" y1="300" x2="190" y2="400" class="stream s-a"/>
+        <line x1="210" y1="300" x2="210" y2="400" class="stream s-b"/>
+        <g clip-path="url(#cupclip)"><rect class="coffee" x="150" y="380" width="100" height="90"/></g>
+        <ellipse class="crema" cx="200" cy="384" rx="46" ry="5"/>
+        <path d="M153 384 H247 V420 Q247 466 200 466 Q153 466 153 420Z" class="ln thick"/>
+        <path d="M247 396 Q284 396 284 424 Q284 450 250 448" class="ln thick"/>
+        <ellipse cx="200" cy="476" rx="74" ry="8" class="ln"/>
+        <path class="steam st1" d="M180 372 q-10 -18 0 -34 t0 -34"/>
+        <path class="steam st2" d="M200 372 q10 -18 0 -34 t0 -34"/>
+        <path class="steam st3" d="M220 372 q-10 -18 0 -34 t0 -34"/>
+      </g>
+    </svg>
+
+    <p id="intro-cap" class="intro-cap" aria-hidden="true"></p>
+    <div id="intro-logo" class="brand-mark" aria-hidden="true"><span class="az">AZ</span> <span class="cf">COFFEE</span></div>
+    <button id="intro-skip" class="intro-skip" type="button">رد کردن</button>
+    <div class="intro-progress" aria-hidden="true"><i id="intro-bar"></i></div>
+  </div>
+  <!-- لوگوی کم‌رنگ پس‌زمینه‌ی سایت (بعد از پایان انیمیشن می‌ماند) -->
+  <div id="bg-logo" class="brand-mark" aria-hidden="true"><span class="az">AZ</span> <span class="cf">COFFEE</span></div>
+
+  <a class="skip-link" href="#categories">رفتن به دسته‌بندی‌ها</a>
+
+  <!-- ===== هدر ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#home" class="logo" aria-label="AZ COFFEE">AZ <span>COFFEE</span></a>
+
+      <!-- منوی دسکتاپ (در موبایل مخفی است و منوی کشویی جایگزین می‌شود) -->
+      <nav class="site-nav" aria-label="منوی اصلی">
+        <a href="#home">خانه</a>
+        <a href="#categories">محصولات</a>
+        <a href="#about">درباره ما</a>
+        <a href="#support">پشتیبانی</a>
+        <a href="#contact">تماس</a>
+      </nav>
+
+      <div class="header-actions">
+        <button id="cart-open" class="icon-btn" type="button" aria-label="سبد خرید">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 4h2l2.4 11.2a1.5 1.5 0 0 0 1.5 1.2h8.2a1.5 1.5 0 0 0 1.5-1.1L20.5 8H6"/>
+            <circle cx="9.5" cy="20" r="1.2"/><circle cx="17" cy="20" r="1.2"/>
+          </svg>
+          <span id="cart-count" class="cart-count" hidden>0</span>
+        </button>
+        <button id="menu-open" class="icon-btn nav-toggle" type="button" aria-label="باز کردن منو" aria-controls="menu-drawer">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= صفحه‌ی اصلی ================= -->
+    <div id="view-home">
+      <section id="home" class="hero">
+        <div class="container hero-inner">
+          <p class="eyebrow" data-s="hero_eyebrow">قهوه‌ی تخصصی</p>
+          <h1 data-s="hero_title">هر فنجان، یک داستان تازه‌رست</h1>
+          <p class="hero-text" data-s="hero_text">دانه‌های منتخب، رست کنترل‌شده و ارسال در کمترین زمان؛ تا قهوه‌ی خانه‌ی شما هم کافه‌ای شود.</p>
+          <a href="#categories" class="btn btn-primary">مشاهده محصولات</a>
+        </div>
+      </section>
+
+      <!-- دسته‌بندی‌ها: کارت‌هایی با تصویر محو‌شونده -->
+      <section id="categories" class="section">
+        <div class="container">
+          <h2 class="section-title">دسته‌بندی محصولات</h2>
+          <p id="categories-status" class="status" role="status">در حال بارگذاری…</p>
+          <noscript><p class="status">برای مشاهده و خرید محصولات، جاوااسکریپت مرورگر را فعال کنید.</p></noscript>
+          <div id="category-grid" class="cat-grid"></div>
+        </div>
+      </section>
+
+      <section id="about" class="section section-alt">
+        <div class="container about">
+          <h2 class="section-title" data-s="about_title">درباره‌ی AZ COFFEE</h2>
+          <div id="about-text">
+            <p>ما قهوه را با وسواس انتخاب می‌کنیم؛ از مزرعه تا فنجان. هر محموله پیش از رست، فنجان‌گذاری می‌شود و فقط دانه‌هایی که استاندارد ما را پاس کنند به دست شما می‌رسند.</p>
+            <p>رست به‌صورت سفارشی و در دسته‌های کوچک انجام می‌شود تا همیشه تازه‌ترین طعم را تجربه کنید.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- پشتیبانی -->
+      <section id="support" class="section">
+        <div class="container support">
+          <h2 class="section-title">پشتیبانی</h2>
+          <p class="support-text" data-s="support_text">برای راهنمایی خرید، انتخاب نوع قهوه و پیگیری سفارش با ما در ارتباط باشید.</p>
+          <div id="support-links" class="support-links"></div>
+        </div>
+      </section>
+
+      <section id="contact" class="section section-alt">
+        <div class="container contact">
+          <h2 class="section-title">تماس با ما</h2>
+          <ul id="contact-list" class="contact-list"></ul>
+        </div>
+      </section>
+    </div>
+
+    <!-- ================= صفحه‌ی دسته‌بندی (با جاوااسکریپت پر می‌شود) ================= -->
+    <div id="view-category" class="container view" hidden></div>
+
+    <!-- ================= صفحه‌ی محصول (با جاوااسکریپت پر می‌شود) ================= -->
+    <div id="view-product" class="container view" hidden></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="logo">AZ <span>COFFEE</span></div>
+      <div id="footer-socials" class="socials"></div>
+      <p class="copy">© <span id="year"></span> AZ COFFEE. تمامی حقوق محفوظ است.</p>
+    </div>
+  </footer>
+
+  <div id="overlay" class="overlay" hidden></div>
+
+  <!-- ===== منوی کشویی (از سمت راست باز می‌شود) ===== -->
+  <aside id="menu-drawer" class="drawer drawer-right" role="dialog" aria-modal="true" aria-label="منو" inert>
+    <div class="drawer-head">
+      <span class="logo">AZ <span>COFFEE</span></span>
+      <button id="menu-close" class="icon-btn" type="button" aria-label="بستن منو">✕</button>
+    </div>
+    <nav class="menu-links" aria-label="منوی اصلی">
+      <a href="#home">خانه</a>
+      <a href="#categories">محصولات</a>
+      <a href="#about">درباره ما</a>
+      <a href="#support">پشتیبانی</a>
+      <a href="#contact">تماس</a>
+    </nav>
+  </aside>
+
+  <!-- ===== سبد خرید (پنل جانبی از سمت چپ) ===== -->
+  <aside id="cart-drawer" class="drawer" role="dialog" aria-modal="true" aria-label="سبد خرید" inert>
+
+    <section id="view-cart" class="drawer-view">
+      <div class="drawer-head">
+        <h2>سبد خرید</h2>
+        <button id="cart-close" class="icon-btn" type="button" aria-label="بستن">✕</button>
+      </div>
+      <div class="drawer-body">
+        <p id="cart-empty" class="status">سبد خرید شما خالی است.</p>
+        <ul id="cart-items" class="cart-items"></ul>
+      </div>
+      <div class="drawer-foot">
+        <div class="total-row"><span>مجموع</span><strong id="cart-total">۰ تومان</strong></div>
+        <button id="btn-checkout" class="btn btn-primary btn-block" type="button" disabled>ادامه و تکمیل سفارش</button>
+      </div>
+    </section>
+
+    <section id="view-checkout" class="drawer-view" hidden>
+      <div class="drawer-head">
+        <h2>اطلاعات سفارش</h2>
+        <button id="checkout-back" class="icon-btn" type="button" aria-label="بازگشت به سبد">→</button>
+      </div>
+      <form id="checkout-form" class="checkout-form" novalidate>
+        <div class="drawer-body">
+          <label for="f-name">نام و نام خانوادگی</label>
+          <input id="f-name" name="customer_name" type="text" autocomplete="name" required>
+
+          <label for="f-phone">شماره تماس</label>
+          <input id="f-phone" name="customer_phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="09123456789" dir="ltr" required>
+
+          <label for="f-address">آدرس کامل</label>
+          <textarea id="f-address" name="customer_address" rows="4" autocomplete="street-address" required></textarea>
+
+          <p id="shipping-note" class="note" hidden></p>
+          <p id="checkout-error" class="form-error" role="alert" hidden></p>
+        </div>
+        <div class="drawer-foot">
+          <div class="total-row"><span>مبلغ قابل پرداخت</span><strong id="checkout-total">۰ تومان</strong></div>
+          <button id="btn-submit" class="btn btn-primary btn-block" type="submit">پرداخت</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- پیام تا زمان اتصال درگاه پرداخت -->
+    <section id="view-success" class="drawer-view" hidden>
+      <div class="drawer-head">
+        <h2>پرداخت</h2>
+        <button id="success-close" class="icon-btn" type="button" aria-label="بستن">✕</button>
+      </div>
+      <div class="drawer-body">
+        <p class="status">پرداخت آنلاین هنوز فعال نشده است. اطلاعات شما ثبت شد و سبد خریدتان حفظ می‌شود؛ لطفاً بعداً دوباره تلاش کنید.</p>
+      </div>
+    </section>
+  </aside>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="intro.js"></script>
+  <script src="script.js"></script>
+  <!-- برای اتصال درگاه پرداخت: فایل payment.js را بسازید و این خط را فعال کنید (راهنما در README) -->
+  <!-- <script src="payment.js"></script> -->
+</body>
+</html>
